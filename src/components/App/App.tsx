@@ -1,8 +1,27 @@
 import React from "react";
+import { pokemonData } from "../../data/pokemonData";
 import Pokedex from "../Pokedex/Pokedex";
 import "./App.css";
 
-class App extends React.Component {
+interface AppState {
+  searchField: string;
+  allPokemons: any;
+  searchPokemons: any;
+  selectedPokemon: any;
+}
+
+class App extends React.Component<any, AppState> {
+  state = {
+    searchField: "",
+    allPokemons: [],
+    searchPokemons: [],
+    selectedPokemon: undefined,
+  };
+
+  componentDidMount() {
+    const pokeData = pokemonData;
+  }
+
   render() {
     return (
       <div className="App">
