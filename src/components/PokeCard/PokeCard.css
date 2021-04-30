@@ -5,6 +5,7 @@
   background-color: #f6d743;
   border: 1px solid #120136;
   border-radius: 5px;
+  padding: 10px;
   cursor: pointer;
   backface-visibility: hidden;
   transform: translateZ(0);
@@ -16,4 +17,9 @@
 
 .pokecard:hover {
   transform: scale(1.05);
+}
+
+.pokemon-sprite {
+  height: 85px;
+  width: 85px;
 }

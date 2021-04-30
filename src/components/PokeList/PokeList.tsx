@@ -1,18 +1,30 @@
-import PokeCard from "../PokeCard/PokeCard";
-import "./PokeList.css";
+import React from "react";
+import { PokemonSchema } from "../../types/PokemonSchema";
+import Pokecard from "../Pokecard/Pokecard";
+import "./Pokelist.css";
 
-const PokeList = () => {
+interface PokelistProps {
+  pokemons: PokemonSchema[];
+  onPokemonClick: (pokemonName: string) => void;
+}
+
+const Pokelist = ({ pokemons, onPokemonClick }: PokelistProps) => {
   return (
     <div className="pokelist">
-      <PokeCard name="pikachu" />
-      <PokeCard name="pikachu1" />
-      <PokeCard name="pikachu2" />
-      <PokeCard name="pikachu3" />
-      <PokeCard name="pikachu4" />
-      <PokeCard name="pikachu5" />
-      <PokeCard name="pikachu6" />
+      {pokemons.map((pokemon) => {
+        return (
+          pokemon.name && (
+            <Pokecard
+              key={pokemon.id}
+              name={pokemon.name}
+              spriteUrl={pokemon.sprites.normal}
+              onPokemonClick={onPokemonClick}
+            />
+          )
+        );
+      })}
     </div>
   );
 };
 
-export default PokeList;
+export default Pokelist;

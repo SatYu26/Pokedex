@@ -5,9 +5,15 @@
   background-color: #f6d743;
   border: 1px solid #120136;
   border-radius: 5px;
-  margin: 10px;
   padding: 10px;
-  flex-grow: 1;
+  margin: 10px;
   min-width: 150px;
+  flex-grow: 1;
   font-family: "Press Start 2P", cursive;
+}
+
+.pokemon-animated-sprite {
+  height: 120px;
+  width: 120px;
+  padding: 12px;
 }
